@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}
+Comic Preview — ComicCraft
+{% endblock %}
+
+
+{% block content %}
+
+<div class="result-head">
+
+    <div>
+
+        <p class="eyebrow">
+            YOUR COMIC IS READY
+        </p>
+
+        <h1>
+            Comic Preview
+        </h1>
+
+    </div>
+
+
+    <a
+        class="primary button"
+        href="{{ pdf_path }}"
+        download
+    >
+        ⬇ Download PDF
+    </a>
+
+</div>
+
+
+<div class="meta">
+
+    {{ input.character_name }}
+    •
+    {{ input.setting|title }}
+    •
+    {{ input.tone|title }}
+    •
+    {{ input.art_style|title }}
+
+</div>
+
+
+<section class="comic-grid">
+
+
+    {% for panel in layout %}
+
+
+    <article class="panel card">
+
+        <div class="panel-number">
+
+            PANEL
+            {{ panel.panel_number }}
+
+        </div>
+
+
+        <h2>
+            {{ panel.title }}
+        </h2>
+
+
+        <img
+            src="{{ panel.image_path }}"
+            alt="{{ panel.title }}"
+        >
+
+
+        <p class="scene">
+
+            <em>
+                {{ panel.scene_description }}
+            </em>
+
+        </p>
+
+
+        <p class="caption">
+
+            {{ panel.caption }}
+
+        </p>
+
+
+        <p>
+
+            {{ panel.narration }}
+
+        </p>
+
+
+        {% for line in panel.dialogue %}
+
+        <blockquote>
+
+            {{ line }}
+
+        </blockquote>
+
+        {% endfor %}
+
+
+        <details>
+
+            <summary>
+                Image prompt
+            </summary>
+
+            <p>
+                {{ panel.image_prompt }}
+            </p>
+
+        </details>
+
+
+    </article>
+
+
+    {% endfor %}
+
+
+</section>
+
+
+<div class="center">
+
+    <a
+        class="secondary button"
+        href="/"
+    >
+        Create another comic
+    </a>
+
+</div>
+
+
+{% endblock %}

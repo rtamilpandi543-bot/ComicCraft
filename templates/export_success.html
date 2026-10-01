@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Export Complete — ComicCraft
+{% endblock %}
+
+
+{% block content %}
+
+<section class="success card">
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+    <h1>
+        Comic exported successfully
+    </h1>
+
+    <p>
+        Your PDF is ready to save or share.
+    </p>
+
+
+    <a
+        class="primary button"
+        href="{{ pdf_path }}"
+        download
+    >
+        Download PDF
+    </a>
+
+
+    <a
+        class="secondary button"
+        href="/"
+    >
+        Go Create Another Comic
+    </a>
+
+</section>
+
+{% endblock %}

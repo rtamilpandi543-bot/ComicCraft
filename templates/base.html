@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        {% block title %}
+        ComicCraft
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/styles.css"
+    >
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a
+        href="/"
+        class="brand"
+    >
+        🦸 ComicCraft
+    </a>
+
+    <span>
+        AI Comic Story Creator
+    </span>
+
+</header>
+
+
+<main class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<footer>
+    ComicCraft • Gemini + Diffusers • FastAPI
+</footer>
+
+
+<script
+    src="/static/js/app.js"
+></script>
+
+</body>
+
+</html>
